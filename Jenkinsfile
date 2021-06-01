@@ -1,15 +1,34 @@
 pipeline {
-  agent any
+  agent {
+      label ('NODEJS')
+  }
 
   stages {
+    
+    stage('Compile Code') {
+      steps {
+        sh '''
+          mvn compile
+        '''
+      }
+    }
+
+    stage('Make Package') {
+      steps {
+        sh '''
+          mvn package
+        '''
+      }
+    }
 
     stage('Prepare Artifacts') {
       steps {
         sh '''
-          zip ../users.zip *
+          cp target/*.jar users.jar 
+          zip -r users.zip users.jar
         '''
       }
-    }
+    }  
 
     stage('Upload Artifact') {
       steps {
