@@ -5,18 +5,10 @@ pipeline {
 
   stages {
     
-    stage('Compile Code') {
+    stage('Download Dependencies') {
       steps {
         sh '''
-          mvn compile
-        '''
-      }
-    }
-
-    stage('Make Package') {
-      steps {
-        sh '''
-          mvn package
+          mvn clean package
         '''
       }
     }
@@ -25,7 +17,7 @@ pipeline {
       steps {
         sh '''
           cp target/*.jar users.jar 
-          zip -r users.zip users.jar
+          zip ../users.zip users.jar
         '''
       }
     }  
