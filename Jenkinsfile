@@ -5,10 +5,18 @@ pipeline {
 
   stages {
     
-    stage('Download Dependencies') {
+    stage('Compile Code') {
       steps {
         sh '''
-          mvn clean package
+          mvn compile
+        '''
+      }
+    }
+
+    stage('Make Package') {
+      steps {
+        sh '''
+          mvn package
         '''
       }
     }
