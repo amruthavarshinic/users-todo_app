@@ -1,42 +1,9 @@
-pipeline {
-  agent {
-      label ('NODEJS')
-  }
+@Library('todo') _
 
-  stages {
-    
-    stage('Compile Code') {
-      steps {
-        sh '''
-          mvn compile
-        '''
-      }
-    }
-
-    stage('Make Package') {
-      steps {
-        sh '''
-          mvn package
-        '''
-      }
-    }
-
-    stage('Prepare Artifacts') {
-      steps {
-        sh '''
-          cp target/*.jar users.jar 
-          zip ../users.zip users.jar
-        '''
-      }
-    }  
-
-    stage('Upload Artifact') {
-      steps {
-        sh '''
-         curl -v -u admin:admin123 --upload-file /home/ubuntu/workspace/TODO_CI-Pipelines/users.zip http://172.31.52.12:8081/repository/users/users.zip
-        '''
-      }
-    }
-  }
-
-}
+todo (
+  COMPONENT             : 'users',
+  PROJECT_NAME          : "TODO",
+  SLAVE_LABEL           : "JAVA",
+  SKIP_NEXUS_UPLOAD     : false,
+  APP_TYPE              : "JAVA"
+)
