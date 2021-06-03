@@ -32,4 +32,5 @@ Finally start the Uesrs Module once to effect the changes by the below cammand.
 ```
 # java -jar users.jar
 ```
+;)
 # RELEASE 0.0.1 -DATE - 03-06-2021
