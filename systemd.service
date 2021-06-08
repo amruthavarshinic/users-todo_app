@@ -5,7 +5,7 @@ Description=users Service
 User=todoapp
 Environment=REDIS_HOST=REDIS_ENDPOINT
 ExecStart=/bin/java -jar /home/todoapp/users/users.jar
-SyslogIdentifier=shipping
+SyslogIdentifier=users
 
 [Install]
 WantedBy=multi-user.target
