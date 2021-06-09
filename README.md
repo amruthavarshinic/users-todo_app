@@ -35,6 +35,6 @@ Finally start the Uesrs Module once to effect the changes by the below cammand.
 # systemctl daemon-reload && systemctl start users && systemctl enable users 
 
 ```
-;)
+;) ;)
 # RELEASE 0.0.1 -DATE - 03-06-2021
 # RELEASE 0.0.2 -DATE - 09-06-2021
