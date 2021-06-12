@@ -38,3 +38,4 @@ Finally start the Uesrs Module once to effect the changes by the below cammand.
 ;) ;)
 # RELEASE 0.0.1 -DATE - 03-06-2021
 # RELEASE 0.0.2 -DATE - 09-06-2021
+# RELEASE 0.0.3 -DATE - 12-06-2021
