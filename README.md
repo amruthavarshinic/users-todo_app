@@ -3,9 +3,9 @@
 Create a user for running the application.
 
 ```
-#apt update
-#useradd -m -s /bin/bash todoapp
-#cd /home/todoapp/
+# apt update
+# useradd -m -s /bin/bash todoapp
+# cd /home/todoapp/
 ```
 Lets clone the code from github repository.
 
@@ -31,7 +31,6 @@ Finally start the Uesrs Module once to effect the changes by the below cammand.
 
 ```
 # mv /home/todoapp/users/systemd.service /etc/systemd/system/users.service
-
 # systemctl daemon-reload && systemctl start users && systemctl enable users 
 
 ```
